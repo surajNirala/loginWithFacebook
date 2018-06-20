@@ -70,6 +70,6 @@ class LoginController extends Controller
         $email = $userSocial->email;
         $image = $userSocial->avatar;
 
-        return view('facebook.profile',compact('name','email','image'));
+        return view('welcome',compact('name','email','image'));
     }
 }

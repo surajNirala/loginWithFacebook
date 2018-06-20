@@ -66,6 +66,27 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+
+        .container {
+        position: relative; 
+        max-width: 800px; /* Maximum width */
+        margin: 0 auto; /* Center it */
+        }
+
+        .container .content {
+        position: absolute; /* Position the background text */
+        bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+         /* Black background with 0.5 opacity */
+        color: #f1f1f1; /* Grey text */
+        width: 100%; /* Full width */
+        padding: 20px; /* Some padding */
+        }
+        img {
+    vertical-align: middle;
+    margin-left: -176px;
+}
+
         </style>
     </head>
     <body>
@@ -85,7 +106,25 @@
                 <div class="title m-b-md">
                     Laravel
                 </div>
-                <img src="images/frame.png" width="200" height="200">
+
+                
+                @if(isset($image))
+                <img src="/images/frame.png" width="200" height="200">
+                <img src="{{$image}}" alt="no" width="150" height="150">
+                @else
+                <img src="/images/frame.png" width="200" height="200">
+                @endif
+                <br>
+                <br>
+                @if(isset($name))
+                <div class="link">
+                    <label>Name:-</label>
+                    <b><a href="">{{$name}}</a> |</b>
+                    <label>Email:-</label>
+                    <b><a href="">{{$email}}</a></b>
+
+                </div>
+                @endif
                 <br>
                 <br>
                 <div class="row mg-btm">
